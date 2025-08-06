@@ -1,0 +1,184 @@
+/* by deafault use */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "urbanist", sans-serif;
+}
+
+h1,h2,h3,h4,h5{
+    font-weight: 'lexend deca' , sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+h1{
+    font-size: 3.0rem;
+}
+
+#h1{
+    font-weight: bolder;
+
+}
+p{
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    color:hsl(from color h s l);
+    letter-spacing: 0.07rem;
+    line-height: 1.55rem;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+#common-heading{
+    font-size: 3rem;
+    font-weight: bolder;
+    letter-spacing: 0.01rem;
+}
+
+.common-title{
+    margin-bottom: 4.2rem;
+} 
+
+
+/* nav bar */
+
+.nav-link {
+    color: whitesmoke;
+}
+
+/* hero section start  */
+
+.hero-section .container{
+    display: grid;
+    place-content: center;
+    height: inherit;
+}
+
+.bg-main {
+    height: 100vh;
+    position: relative;
+}
+#photo img{
+    max-width: 100%;
+    width: 40rem;
+    height:auto;
+}
+
+.bg-color{
+    background-color: #000000;
+}
+
+.text-light-grey{
+    color: dimgrey;
+}
+
+button a {
+    font-size: 1.15rem;
+    letter-spacing: 0.03 rem;
+    word-spacing: .1rem;
+    color: darkblue;
+}
+
+button a:hover{
+    color: azure;
+}
+
+.custom-shape-divider-bottom-1752166784 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1752166784 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1752166784 .shape-fill {
+    fill: #FFFFFF;
+}
+
+
+
+/* service section  */
+
+.service-section{
+    padding: 3rem 0 3rem 0;
+}
+
+.icon-span {
+    height: 3rem;
+    width: 3rem;
+}
+
+.card-box img {
+    height: 6rem;
+    width: 7rem;
+}
+
+#box-shadow:hover{
+      box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+}
+
+/* digital product showcase  */
+
+.figure img{
+    max-width: 100%;
+    width: 40rem;
+    height:27rem;
+}
+
+.for-more-info{
+    background-image: linear-gradient(rgba(22,22,22,0.9) , rgba(22,22,22,0.9)) , url(://i.pinimg.com/736x/8e/49/8c/8e498cbcb5e690c6a2ef6a9cdabd1893.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+
+/* contact section  */
+.contact-section {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    position: relative;
+}
+
+.custom-shape-divider-top-1752322968 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
+.custom-shape-divider-top-1752322968 svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1752322968 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.contact-section .form-section{
+    width: 50%;
+}
