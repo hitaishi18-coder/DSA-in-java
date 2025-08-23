@@ -1,6 +1,6 @@
 public class _25_spiral {
     public static void main(String[] args) {
-        int N = 10;
+        int N = 6;
         int a[][] = generateMatrix(N);
         printMatrix(a);
 
