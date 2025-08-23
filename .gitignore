@@ -1,0 +1,2 @@
+# Ignore all Java class files in dsa and its subfolders
+*.class
