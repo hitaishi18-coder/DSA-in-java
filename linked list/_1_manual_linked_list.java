@@ -1,5 +1,5 @@
 // run krne ki file .. 
-public class manual_linked_list
+public class _1_manual_linked_list
 {
     public static void main(String[] args) 
     {
@@ -8,7 +8,7 @@ public class manual_linked_list
         Node nd2 = new Node(20);
         Node nd3 = new Node(30);
         Node nd4 = new Node(40);
-
+        
         start    = nd1;
         nd1.next = nd2;
         nd2.next = nd3;
