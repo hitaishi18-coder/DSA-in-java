@@ -8,13 +8,13 @@ public class _1_manual_linked_list
         Node nd2 = new Node(20);
         Node nd3 = new Node(30);
         Node nd4 = new Node(40);
-        
+
         start    = nd1;
         nd1.next = nd2;
         nd2.next = nd3;
         nd3.next = nd4;
 
-        // print linked list
+        // printing ...  linked list
         Node t = start;
         System.out.print("start-->");
         while (t!=null) 
