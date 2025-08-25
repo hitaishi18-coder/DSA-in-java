@@ -1,6 +1,8 @@
 public class _6_update {
     public static void main(String[] args) {
-         MyLinkedList ll = new MyLinkedList();
+        MyLinkedList ll = new MyLinkedList(); // create linked list object
+
+        // add elements to linked list
         ll.add(10);
         ll.add(20);
         ll.add(30);
@@ -8,76 +10,69 @@ public class _6_update {
         ll.add(50);
         ll.add(100);
 
+        // print original list
         ll.printLinkedList();
 
-        System.out.println("update" + " " + ll.update(50, 80) + " " + "nodes");
+        // update all nodes with value = 50 → change to 80
+        // update() returns number of nodes updated
+        System.out.println("update " + ll.update(50, 80) + " nodes");
 
-         ll.printLinkedList();
+        // print updated list
+        ll.printLinkedList();
     }
 }
 
-class MyLinkedList
-{
-    Node start ;
+class MyLinkedList {
+    Node start; // head node (first element of list)
 
-    void add(int val)
-    {
-        Node nd = new Node(val);
-        if (start == null)
-        {
-            start = nd;
-        }
-        else 
-        {
-            Node t = start ;
-            while (t.next != null) { 
+    // add new node at end
+    void add(int val) {
+        Node nd = new Node(val);   // create new node
+        if (start == null) {       // if list empty
+            start = nd;            // first node becomes head
+        } else {
+            Node t = start;        // pointer for traversal
+            while (t.next != null) {  // move till last node
                 t = t.next;
             }
-            t.next = nd ;
+            t.next = nd; // attach new node at end
         }
     }
 
-
-    // update logic 
-    int update(int old_value , int new_value)
-    {
-        int count = 0 ;
-        Node t = start ;
-        while (t != null) { 
-            if(t.val == old_value)
-            {
-                t.val = new_value;
-                count++;
+    // update logic → replace old_value with new_value
+    // returns count of updated nodes
+    int update(int old_value, int new_value) {
+        int count = 0;   // to track how many updates done
+        Node t = start;  // start from head
+        while (t != null) {   // traverse till end
+            if (t.val == old_value) { // check match
+                t.val = new_value;    // update value
+                count++;              // increase counter
             }
-            t = t.next;
+            t = t.next; // move to next node
         }
-        return count;
-    }
-    void printLinkedList()
-    {
-        Node t = start;
-        System.out.println("start--->");
-
-        while (t != null) { 
-            System.out.println(t.val + "----->");
-
-            t = t.next;
-        }
-        System.out.println("x");
+        return count; // return how many updates happened
     }
 
-    class Node 
-    {
-        int val ;
-        Node next ;
+    // print linked list
+    void printLinkedList() {
+        Node t = start; // pointer at head
+        System.out.println("start --->");
+        while (t != null) { // traverse list
+            System.out.println(t.val + " --->");
+            t = t.next;
+        }
+        System.out.println("X"); // end of list
+    }
 
-        Node(int val)
-        {
+    // inner Node class (each element of linked list)
+    class Node {
+        int val;   // stores data
+        Node next; // reference to next node
+
+        Node(int val) {
             this.val = val;
-            this.next = null;
+            this.next = null; // initially null
         }
-        
     }
 }
-
-

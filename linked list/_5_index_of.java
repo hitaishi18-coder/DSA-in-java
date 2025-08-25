@@ -1,6 +1,8 @@
 public class _5_index_of {
     public static void main(String[] args) {
-        MyLinkedList ll = new MyLinkedList();
+        MyLinkedList ll = new MyLinkedList(); // create linked list
+
+        // add elements to linked list
         ll.add(10);
         ll.add(20);
         ll.add(30);
@@ -8,67 +10,69 @@ public class _5_index_of {
         ll.add(50);
         ll.add(100);
 
+        // print linked list
         ll.printLinkedList();
 
-        System.out.println("Index of 50: " + ll.indexOf(50));
-        System.out.println("Index of 200: " + ll.indexOf(200));
+        // find index of given values
+        System.out.println("Index of 50: " + ll.indexOf(50));   // present in list
+        System.out.println("Index of 200: " + ll.indexOf(200)); // not present in list
     }
 }
 
 class MyLinkedList {
-    Node start;
+    Node start; // head pointer (first node of list)
 
-    // add elements 
+    // add element at end of linked list
     void add(int val) {
-        Node nd = new Node(val);
-        if (start == null) {
-            start = nd;
+        Node nd = new Node(val);   // create new node
+        if (start == null) {       // if list empty
+            start = nd;            // first node becomes head
         } else {
-            Node t = start;
-            while (t.next != null) {  
+            Node t = start;        // temporary pointer
+            while (t.next != null) {  // traverse till last node
                 t = t.next;
             }
-            t.next = nd;
+            t.next = nd; // attach new node at end
         }
     }
 
-    // find index of element
+    // find index of a given element
     int indexOf(int val) {
-        Node t = start;
-        int i = 0;
-        while (t != null) {
-            if (t.val == val) {
-                return i;   // return index immediately
+        Node t = start; // start from head
+        int i = 0;      // index counter
+        while (t != null) {  // traverse till end
+            if (t.val == val) { // if value matches
+                return i;       // return current index
             }
-            t = t.next;
-            i++;
+            t = t.next; // move to next node
+            i++;        // increase index
         }
-        return -1; // not found
+        return -1; // element not found
     }
 
-    // check if empty
+    // check if linked list is empty
     boolean isEmpty() {
         return (start == null);
     }
 
     // print linked list
     void printLinkedList() {
-        Node t = start;
+        Node t = start; // temporary pointer
         System.out.print("start ---> ");
-        while (t != null) {
+        while (t != null) {  // traverse nodes
             System.out.print(t.val + " ---> ");
             t = t.next;
         }
-        System.out.println("X");
+        System.out.println("X"); // end of list
     }
 
-    // Node class
+    // inner Node class (represents each element of list)
     class Node {
-        int val;
-        Node next;
+        int val;   // data
+        Node next; // link to next node
         Node(int val) {
             this.val = val;
-            this.next = null;
+            this.next = null; // initially null
         }
     }
 }

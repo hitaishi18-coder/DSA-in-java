@@ -1,7 +1,9 @@
-public class _12_middle_Node {
+public class _13_middle_Node {
     public static void main(String[] args) {
 
         MyLinkedList ll = new MyLinkedList();
+
+        // adding elements to linked list
         ll.add(10);
         ll.add(20);
         ll.add(30);
@@ -9,14 +11,16 @@ public class _12_middle_Node {
         ll.add(50);
         ll.add(100);
 
+        // print complete linked list
         ll.printLinkedList();
 
-        // find middle node
+        // find middle node of the list
         Node middleNode = MyLinkedList.middNode(ll.start);
 
+        // print middle node value
         System.out.println("Middle element is: " + middleNode.val);
 
-        // print from middle node
+        // print linked list starting from middle node
         System.out.print("List starting from middle: ");
         printList(middleNode);
     }
@@ -35,12 +39,14 @@ public class _12_middle_Node {
 class MyLinkedList {
     Node start;
 
-    // add elements 
+    // add a new element at the end of the linked list
     void add(int val) {
         Node nd = new Node(val);
         if (start == null) {
+            // if list is empty, new node becomes start
             start = nd;
         } else {
+            // otherwise, traverse to the end and add node
             Node t = start;
             while (t.next != null) {
                 t = t.next;
@@ -49,42 +55,43 @@ class MyLinkedList {
         }
     }
 
-    // find size of linked list 
+    // calculate size of linked list
     static int size(Node start) {
         int count = 0;
         Node t = start;
         while (t != null) {
-            count++;
+            count++;        // count each node
             t = t.next;
         }
         return count;
     }
 
-    // get element at index
+    // get element (node) at a given index
     static Node getElementAt(Node start, int index) {
-        int l = size(start);
+        int l = size(start); // get size of list
         if (index < 0 || index >= l) {
+            // index out of bounds
             return null;
         } else {
             int i = 0;
             Node t = start;
             while (t != null) {
-                if (i == index) break;
+                if (i == index) break; // found required index
                 t = t.next;
                 i++;
             }
-            return t;
+            return t; // return node at index
         }
     }
 
-    // middle node
+    // find the middle node of linked list
     public static Node middNode(Node start) {
-        int l = size(start);
-        int middle_position = l / 2;
-        return getElementAt(start, middle_position);
+        int l = size(start);           // get size of list
+        int middle_position = l / 2;   // calculate middle index
+        return getElementAt(start, middle_position); // return middle node
     }
 
-    // print linked list 
+    // print complete linked list from start
     void printLinkedList() {
         Node t = start;
         System.out.print("start ---> ");
@@ -97,11 +104,11 @@ class MyLinkedList {
 }
 
 class Node {
-    int val;
-    Node next;
+    int val;   // value of node
+    Node next; // pointer to next node
 
     Node(int val) {
         this.val = val;
-        this.next = null;
+        this.next = null; // initially, next is null
     }
 }
