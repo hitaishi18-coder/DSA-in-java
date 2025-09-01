@@ -10,7 +10,7 @@ public class count_digit_tail_08 {
         }
         else 
         {
-            int r = n%10;
+            // int r = n%10;
             countDigit(n/10, count+1);
         }
     }
